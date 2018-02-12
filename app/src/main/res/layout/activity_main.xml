@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jacco.mr_potatohead.MainActivity">
+    tools:context="com.example.jacco.mr_potatohead.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <ImageView
         android:id="@+id/Body"
@@ -22,11 +23,10 @@
         android:id="@+id/Eyes"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="1dp"
         android:layout_marginEnd="18dp"
         android:layout_marginStart="18dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/Ears"
+        app:layout_constraintBottom_toBottomOf="@+id/Nose"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Arms"
@@ -49,41 +49,42 @@
         android:id="@+id/Ears"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginBottom="6dp"
         android:layout_marginEnd="47dp"
         android:layout_marginStart="47dp"
-        android:layout_marginTop="14dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/Arms"
+        app:layout_constraintBottom_toBottomOf="@+id/Body"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Hat"
+        app:layout_constraintTop_toTopOf="@+id/Eyes"
         app:srcCompat="@drawable/ears" />
 
     <ImageView
         android:id="@+id/Eyebrow"
         android:layout_width="230dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/Eyesbox"
+        app:layout_constraintBottom_toBottomOf="@+id/Moustache"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Arms"
+        app:layout_constraintTop_toTopOf="@+id/Moustache"
         app:srcCompat="@drawable/eyebrows" />
 
     <ImageView
         android:id="@+id/Hat"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="14dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/Eyebrow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Moustache"
         app:srcCompat="@drawable/hat" />
 
     <ImageView
@@ -116,20 +117,6 @@
         app:srcCompat="@drawable/mustache" />
 
     <ImageView
-        android:id="@+id/Nose"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginStart="38dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/Eyesbox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Moustachebox"
-        app:srcCompat="@drawable/nose" />
-
-    <ImageView
         android:id="@+id/Glasses"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -149,13 +136,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="5dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/Glasses"
-        app:layout_constraintEnd_toEndOf="@+id/Arms"
-        app:layout_constraintStart_toStartOf="@+id/Ears"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Glasses"
         app:srcCompat="@drawable/shoes" />
 
@@ -225,7 +212,7 @@
         android:id="@+id/Glassesbox"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="76dp"
         android:onClick="checkClicked"
         android:text="Glasses"
         app:layout_constraintBottom_toBottomOf="@+id/Eyebrowbox"
@@ -251,7 +238,7 @@
         android:id="@+id/Earsbox"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="99dp"
+        android:layout_marginEnd="95dp"
         android:onClick="checkClicked"
         android:text="Ears"
         app:layout_constraintBottom_toBottomOf="@+id/Shoesbox"
@@ -271,5 +258,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Moustachebox"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/Nose"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="14dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/Glasses"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Shoes"
+        app:srcCompat="@drawable/nose" />
 
 </android.support.constraint.ConstraintLayout>
