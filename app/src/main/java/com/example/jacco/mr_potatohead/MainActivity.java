@@ -9,29 +9,9 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public void checkClicked(View v) {
-        Log.d("potato", "checkClicked: ");
-
-        CheckBox checkbox = (CheckBox) v;
-        String name = checkbox.getText().toString();
-        boolean checked = checkbox.isChecked();
-
-        ImageView Arms = (ImageView) findViewById(R.id.Arms);
-        ImageView Shoes = (ImageView) findViewById(R.id.Shoes);
-        ImageView Eyes = (ImageView) findViewById(R.id.Eyes);
-        ImageView Eyebrow = (ImageView) findViewById(R.id.Eyebrow);
-        ImageView Glasses = (ImageView) findViewById(R.id.Glasses);
-        ImageView Hat = (ImageView) findViewById(R.id.Hat);
-        ImageView Nose = (ImageView) findViewById(R.id.Nose);
-        ImageView Moustache = (ImageView) findViewById(R.id.Moustache);
-        ImageView Mouth = (ImageView) findViewById(R.id.Mouth);
-        ImageView Ears = (ImageView) findViewById(R.id.Ears);
-
-        ImageView[] Photos = {Arms,Shoes,Eyes,Eyebrow,Glasses,Hat,Nose,Moustache,Mouth,Ears};
-
-        //Check if checkbox is checked, if so make visible
-
-    }
+    int imageId[] = new int[]{R.id.Arms, R.id.Shoes, R.id.Eyes, R.id.Eyebrow, R.id.Glasses, R.id.Hat,
+                              R.id.Nose, R.id.Moustache, R.id.Mouth, R.id.Ears};
+    String[] Names = {"Arms","Shoes","Eyes","Eyebrow","Glasses","Hat","Nose","Moustache","Mouth","Ears"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,4 +19,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void checkClicked(View v) {
+        Log.d("potato", "checkClicked: ");
+
+        CheckBox checkbox = (CheckBox) v;
+        String name = checkbox.getText().toString();
+        boolean checked = checkbox.isChecked();
+
+        int Length = Names.length;
+        for (int i = 0; i < Length; i++) {
+
+            ImageView image = findViewById(imageId[i]);
+
+            if (name.equals(Names[i])) {
+                if (checked) {
+                    image.setVisibility(View.VISIBLE);
+                } else {
+                    image.setVisibility(View.INVISIBLE);
+                }
+            }
+        }
+    }
 }
