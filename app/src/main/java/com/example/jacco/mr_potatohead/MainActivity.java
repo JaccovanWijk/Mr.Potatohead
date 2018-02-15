@@ -17,6 +17,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (savedInstanceState != null) {
+            for (int i = 0; i < Names.length; i++) {
+                ImageView image = findViewById(imageId[i]);
+                if (image != null) {
+                    image.setVisibility(savedInstanceState.getInt(Names[i]));
+                }
+            }
+        }
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        for (int i = 0; i < Names.length; i++) {
+            ImageView image = findViewById(imageId[i]);
+            outState.putInt(Names[i], image.getVisibility());
+        }
     }
 
     public void checkClicked(View v) {
